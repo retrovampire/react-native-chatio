@@ -5,7 +5,7 @@ React Native component to integrate your application with Chat.io chat widget ea
 *You can start your 14 days free trial [here](https://www.chat.io/).*
 
 ### Pre requirements:
-1. *License:*
+1. **License:**
 
 To use Chat.io in your application you need **license_id**. 
 
@@ -15,7 +15,7 @@ You can check your **license_id** anytime [here](https://app.chat.io/settings/ch
 
 *If you have difficulties finding your **license_id** please take a look at this [screenshot](https://github.com/livechat/react-native-chatio/blob/master/chatio_license.png).*
 
-2. *Client Id and Redirect URI:*
+2. **Client Id and Redirect URI:**
 
 First, you need to create an application in the [Developers Console](https://accounts.chat.io) **(select the Web app (frontend, eg. JavaScript) type).** 
 
