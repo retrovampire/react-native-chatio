@@ -1,0 +1,36 @@
+{
+  "name": "react-native-chatio",
+  "version": "1.0.12",
+  "description": "React Native component to integrate your application with Chat.io chat widget.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livechat/react-native-chatio.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "chat",
+    "chatio",
+    "livechat"
+  ],
+  "author": "Venits",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livechat/react-native-chatio/issues"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "@livechat/chat.io-customer-sdk": "^0.7.0",
+    "react-native-animatable": "^1.2.4",
+    "react-native-gifted-chat": "^0.3.0",
+    "react-native-movable-view": "^1.0.3"
+  },
+  "homepage": "https://github.com/livechat/react-native-chatio#readme"
+}
