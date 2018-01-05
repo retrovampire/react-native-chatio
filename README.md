@@ -168,6 +168,6 @@ All events are described [here](https://www.chat.io/docs/customer-sdk#events).
 
 
 ## Support
-If you need ahy help, you can chat with us [here](https://www.chat.io/live-chat-guide/).
+If you need any help, you can chat with us [here](https://www.chat.io/live-chat-guide/).
 
 I hope you will find this module useful. Happy coding!
