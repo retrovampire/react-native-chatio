@@ -1,40 +1,43 @@
-﻿# React Native Chat.io
+# Chat.io for React Native
 
-React Native component to integrate your application with Chat.io chat widget easily ;)
+This is a React Native component to easily add [chat.io widget](https://www.chat.io/) to your application.
 
-*You can start your 14 days free trial [here](https://www.chat.io/).*
+![Chat.io for React Native demo](https://raw.githubusercontent.com/venits/react-native-router-flux/master/chatio_demo.gif)
 
-### Pre requirements:
-1. **License:**
+### Prerequisites
 
-To use Chat.io in your application you need **license_id**. 
+To use chat.io in your React Native application, you will need the following:
 
-You get one after creating account on our [website](https://www.chat.io/).
+#### Chat.io license ID
 
-You can check your **license_id** anytime [here](https://app.chat.io/settings/channel-website).
+If you already have a chat.io account, get your **license_id** [here](https://app.chat.io/settings/channel-website).
 
-*If you have difficulties finding your **license_id** please take a look at this [screenshot](https://github.com/livechat/react-native-chatio/blob/master/chatio_license.png).*
+![Chat.io license ID](https://raw.githubusercontent.com/livechat/react-chatio/master/chatio_license.png)
 
-2. **Client Id and Redirect URI:**
+If you don't have an account, you can create one [here](https://www.chat.io/).
 
-First, you need to create an application in the [Developers Console](https://accounts.chat.io) **(select the Web app (frontend, eg. JavaScript) type).** 
+#### Client ID and Redirect URI
 
-After app is created, go to Apps -> Authorization *(There you will find your Client Id and Redirect URI)*.
+1. Log in to [chat.io Developers Console](https://console.chat.io).
+2. Go to "Apps" and add a new application (select the "Web app (frontend, eg. JavaScript)" type).
+3. When the app is created, go to Apps -> Authorization for your Client ID and Redirect URI.
 
-*If you have difficulties finding your **Client Id** or **Redirect URI**  please take a look at this [screenshot](https://github.com/livechat/react-native-chatio/blob/master/developer_console.png).*
-
+![Chat.io Client ID and Redirect URI](https://github.com/livechat/react-native-chatio/blob/master/developer_console.png)
 
 ### Installation
-All you have to do:
+
+To import chat.io for React Native, run the following command:
+
 ```javascript
 npm install react-native-chatio --save
 ```
 
-### Usage
+### User guide
 
-Usage is very simple:
+#### Start
 
-*Import ChatIO component and put it in your render method:*
+Having imported chat.io for React Native, put it in your render method:
+
 ```javascript
 import ChatIO from "react-native-chatio"
 
@@ -47,38 +50,40 @@ import ChatIO from "react-native-chatio"
  />
 ```
 
-### Demo
+#### Customization
 
-![Alt Text](https://raw.githubusercontent.com/venits/react-native-router-flux/master/chatio_demo.gif)
+##### Chat bubble
 
-### Chat Bubble
+Chat bubble is the round icon (chat trigger) in the bottom right corner of the screen.
 
-Chat bubble is a small view that by default is blue and is placed on bottom-right side of your screen.
+###### Position
 
-1. Can can control position of bubble by simply sending **bubbleLeft** and **bubbleTop** props.
+You can control the position of the bubble with `bubbleLeft` and `bubbleTop` props:
 
-*Example:*
 ```javascript
 <ChatIO bubbleLeft={0} bubbleTop={0} license={your_license_id} />
 ```
 
-2. By default bubble component is draggable and movable. You can disable this option by sending **movable** prop with *false* value.
+###### Draggability
 
-*Example:*
+By default, the bubble component is draggable and movable. You can disable this option by sending `movable` prop with `false` value:
+
 ```javascript
 <ChatIO movable={false} license={your_license_id} />
 ```
 
-3. If would like to change color of bubble you can simply pass **bubbleColor** prop with ChatIO component.
+###### Color
 
-*Example:*
+You can change the color of the bubble by passing `bubbleColor` prop:
+
 ```javascript
 <ChatIO bubbleColor='red' license={your_license_id} />
 ```
 
-4. If you don't like appearance of this bubble at all, you can send **bubble** prop with your own component.
+###### Custom bubble
 
-*Example:*
+If you don't like the default bubble, you can send `bubble` prop with your own component:
+
 ```javascript
 <ChatIO license={your_license_id}
   bubble={
@@ -87,32 +92,29 @@ Chat bubble is a small view that by default is blue and is placed on bottom-righ
 />
 ```
 
-### Chat Appearance
+##### Chat window
 
 This module uses [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat) for chat UI.
 
-You can customise your chat appearance by sending props to ChatIO component like you would normally send them to GiftedChat component.
+You can customise your chat widget by sending props to ChatIO component (like you would normally do with GiftedChat component).
 
-For example if you would like to control **onPressAvatar** to show info about agent, you can do it like this:
+For example, if you want `onPressAvatar` to show agent's details, you can do it like this:
 
-*Example:*
 ```javascript
 <ChatIO license={your_license_id}
   onPressAvatar={ info => console.warn(info) } />
 ```
 
-*You can find information about all props here: [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat).*
+You can find all props in the official [react-native-gifted-chat documentation](https://github.com/FaridSafi/react-native-gifted-chat).
 
 
 ### Methods
 
-This module uses [Chat.io Customer SDK](https://www.chat.io/docs/customer-sdk).
-*All methods and events described there.*
+This module uses [Chat.io Customer SDK](https://www.chat.io/docs/customer-sdk). All methods are described [here](https://www.chat.io/docs/customer-sdk#methods).
 
-To begin with, you want to get your chat reference using **onLoaded** callback.
-*Some methods need current **chat_id** to work. You can get it using **onChatStarted** callback.*
+To begin with, get your chat reference using `onLoaded` callback:
 
-*Example:*
+
 ```javascript
 <ChatIO 
   onLoaded={ref => this.chat = ref}
@@ -120,15 +122,17 @@ To begin with, you want to get your chat reference using **onLoaded** callback.
 />
 ```
 
-*Using this reference you can for example get full chat history:*
+With this reference you can, for example, get full chat history:
 
 ```javascript
 const history = this.chat.getChatHistory(this.chatId);
 ```
 
-You can find more information about handling chat history [here](https://www.chat.io/docs/customer-sdk#getchathistory).
+Learn more about handling chat history [here](https://www.chat.io/docs/customer-sdk#getchathistory).
 
-*Table of methods:*
+**Note:** Some methods require the current `chat_id` to work. You can get it with `onChatStarted` callback.
+
+#### Available methods
 
 |Name|Note|
 |---|---|
@@ -142,11 +146,12 @@ You can find more information about handling chat history [here](https://www.cha
 
 
 ### Events
-You can listen for emitted events by subscribing to them (*using **on** method*) with your custom JavaScript function. 
 
-*All events described [here](https://www.chat.io/docs/customer-sdk#events).*
+You can listen for emitted events by subscribing to them (using `on` method) with your custom JavaScript function. 
 
-*Table of events:*
+All events are described [here](https://www.chat.io/docs/customer-sdk#events).
+
+#### Available events
 
 |Name|Note|
 |---|---|
@@ -158,9 +163,3 @@ You can listen for emitted events by subscribing to them (*using **on** method*)
 |user_left_chat | Executes when user left chat. |
 |user_is_typing | Executes when user is typing. |
 |user_stopped_typing | Executes when user stopped typing.  |
-
-### Support
-In case of any problem you can chat with us [here](https://www.chat.io/live-chat-guide/).
-
-**I hope you will find this module useful. Happy Coding :)**
-
