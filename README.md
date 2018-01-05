@@ -4,6 +4,8 @@ This is a React Native component to easily add [chat.io widget](https://www.chat
 
 ![Chat.io for React Native demo](https://raw.githubusercontent.com/venits/react-native-router-flux/master/chatio_demo.gif)
 
+## Getting Started
+
 ### Prerequisites
 
 To use chat.io in your React Native application, you will need the following:
@@ -32,9 +34,9 @@ To import chat.io for React Native, run the following command:
 npm install react-native-chatio --save
 ```
 
-### User guide
+## User guide
 
-#### Start
+### Start
 
 Having imported chat.io for React Native, put it in your render method:
 
@@ -50,13 +52,13 @@ import ChatIO from "react-native-chatio"
  />
 ```
 
-#### Customization
+### Customization
 
-##### Chat bubble
+#### Chat bubble
 
 Chat bubble is the round icon (chat trigger) in the bottom right corner of the screen.
 
-###### Position
+##### Position
 
 You can control the position of the bubble with `bubbleLeft` and `bubbleTop` props:
 
@@ -64,7 +66,7 @@ You can control the position of the bubble with `bubbleLeft` and `bubbleTop` pro
 <ChatIO bubbleLeft={0} bubbleTop={0} license={your_license_id} />
 ```
 
-###### Draggability
+##### Draggability
 
 By default, the bubble component is draggable and movable. You can disable this option by sending `movable` prop with `false` value:
 
@@ -72,7 +74,7 @@ By default, the bubble component is draggable and movable. You can disable this 
 <ChatIO movable={false} license={your_license_id} />
 ```
 
-###### Color
+##### Color
 
 You can change the color of the bubble by passing `bubbleColor` prop:
 
@@ -80,7 +82,7 @@ You can change the color of the bubble by passing `bubbleColor` prop:
 <ChatIO bubbleColor='red' license={your_license_id} />
 ```
 
-###### Custom bubble
+##### Custom bubble
 
 If you don't like the default bubble, you can send `bubble` prop with your own component:
 
@@ -92,7 +94,7 @@ If you don't like the default bubble, you can send `bubble` prop with your own c
 />
 ```
 
-##### Chat window
+#### Chat window
 
 This module uses [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat) for chat UI.
 
@@ -163,3 +165,9 @@ All events are described [here](https://www.chat.io/docs/customer-sdk#events).
 |user_left_chat | Executes when user left chat. |
 |user_is_typing | Executes when user is typing. |
 |user_stopped_typing | Executes when user stopped typing.  |
+
+
+## Support
+If you need ahy help, you can chat with us [here](https://www.chat.io/live-chat-guide/).
+
+I hope you will find this module useful. Happy coding!
